@@ -24,6 +24,7 @@ var expressSanitizer 		= require("express-sanitizer");
 //var User = require("./models/user");
 //var request = require("request");
 //seedDB();
+//mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connect("mongodb+srv://vidmantas:desrainis@cluster0-teyia.mongodb.net/test?retryWrites=true&w=majority", {
 	useNewUrlParser: true, 
 	useUnifiedTopology: true,
