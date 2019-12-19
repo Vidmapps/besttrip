@@ -1,0 +1,30 @@
+<% include ../partials/header.ejs %>
+
+<div class="container">
+	<header class="jumbotron">
+		<div class = container>
+			<h1> Welcome to the camp!</h1>
+			<p>Check out our camps!</p>
+			<p><a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new Camp</a></p>
+		</div>
+	</header>
+	
+	
+	<div class="row text-center" style="display:flex; flex-wrap:wrap;">
+			<% campgrounds.forEach(function(campground){ %>
+			<div class="col-md-6 col-sm-6">
+				<div class="img-thumbnail">
+					<img src="<%= campground.image %>" width="100%">
+					<div class="caption"><%= campground.name %></div>
+					<p>
+						<a href="/campgrounds/<%= campground._id %>" class="ui violet big basic button">More info</a>
+					</p>
+				</div>
+			</div>
+		<% }); %>
+	</div>	
+	<a href="https://s2-nqzyr.run.goorm.io">Back to landing</a>
+
+</div>
+
+<% include ../partials/footer.ejs %>
