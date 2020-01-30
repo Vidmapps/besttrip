@@ -1,7 +1,9 @@
 //IMPORTANT
-var express 				= require("express");
-var app						= express();
-var bodyParser 				= require("body-parser");
+require('dotenv').config();
+
+var express 								= require("express");
+var app											= express();
+var bodyParser 							= require("body-parser");
 var mongoose 								= require("mongoose");
 var flash										= require("connect-flash")
 var seedDB 									= require("./seeds");
@@ -16,6 +18,7 @@ var commentRoutes 					= require("./routes/comments");
 var campgroundRoutes 				= require("./routes/campgrounds");
 var indexRoutes 						= require("./routes/index");
 var expressSanitizer 				= require("express-sanitizer");
+
 
 
 //var User = require("./models/user");
@@ -72,8 +75,8 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 
 //IMPORTANT
 app.listen(
-	//3000
-	process.env.PORT, process.env.IP
+	3000
+	//process.env.PORT, process.env.IP
 	, function(){
   console.log('Server listening on port 3000'); 
 });

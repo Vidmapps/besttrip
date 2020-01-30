@@ -9,8 +9,8 @@
 				<li class="list-group-item">Info 2</li>
 				<li class="list-group-item">Info 3</li>
 			</div>
-			<div class="googlemap-section">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73583.06616292149!2d-68.37284281193334!3d-54.806842987571116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4c22b5bad109bf%3A0x5498473dba43ebfc!2sUshuaia%2C+Tierra+del+Fuego+Province%2C+Argentina!5e0!3m2!1sen!2slt!4v1553622741279" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen>					</iframe>   
+			<div id="map">
+
    			</div>
 		</div>
 		<div class="col-md-9">
@@ -59,7 +59,34 @@
 			</div>
 		</div>
 	</div>
-
+	<script>
+			function initMap() {
+			  var lat = <%= campground.lat %>;
+			  var lng = <%= campground.lng %>;
+			  var center = {lat: lat, lng: lng };
+			  var map = new google.maps.Map(document.getElementById('map'), {
+				  zoom: 8,
+				  center: center,
+				  scrollwheel: false
+			  });
+			  var contentString = `
+				<strong><%= campground.name %><br />
+				<%= campground.location %></strong>
+				<p><%= campground.description %></p>
+			  `
+			  var infowindow = new google.maps.InfoWindow({
+				content: contentString
+			  });
+			  var marker = new google.maps.Marker({
+				  position: center,
+				  map: map
+			  });
+			  marker.addListener('click', function() {
+				infowindow.open(map, marker);
+			  });
+			}
+	</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1DMKxjeLpyF8uwZOFESLPDdho_O0NLmc&callback=initMap"></script>
 
 
 <% include ../partials/footer.ejs %>
