@@ -18,6 +18,7 @@ var commentRoutes 					= require("./routes/comments");
 var campgroundRoutes 				= require("./routes/campgrounds");
 var indexRoutes 						= require("./routes/index");
 var expressSanitizer 				= require("express-sanitizer");
+app.locals.moment 					= require('moment');
 
 
 
