@@ -14,18 +14,23 @@ router.get("/", function(req, res){ //Search Input page
 //===============AUTH ROUTES======================
 
 //show sign up form
-router.get("/register", function(req, res){
+/* router.get("/register", function(req, res){
    res.render("register"); 
-});
+}); */
+
+// show register form
+router.get("/register", function(req, res){
+	res.render("register", {page: 'register'}); 
+ });
 
 router.post("/register", function(req, res){
 	req.body.username
 	req.body.password
     User.register(new User({username: req.body.username}), req.body.password, function(err, user){
         if(err){
-			req.flash("error", err.message);	
-            return res.render('register');
-        }
+			console.log(err);
+			return res.render("register", {error: err.message});
+		}
         passport.authenticate("local")(req, res, function(){
 			req.flash("success", "Welcome " + user.username);	
             res.redirect("/campgrounds");
@@ -36,10 +41,15 @@ router.post("/register", function(req, res){
 //===============AUTH ROUTES======================
 
 //====== Login Routes ========
-
+/* 
 router.get("/login", function(req, res){
    res.render("login"); 
-});
+}); */
+
+//show login form
+router.get("/login", function(req, res){
+	res.render("login", {page: 'login'}); 
+ });
 
 router.post("/login", passport.authenticate("local", {
 	successRedirect : "/campgrounds",

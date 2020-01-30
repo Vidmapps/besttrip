@@ -71,7 +71,10 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 
 
 //IMPORTANT
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(
+	//3000
+	process.env.PORT, process.env.IP
+	, function(){
   console.log('Server listening on port 3000'); 
 });
 //IMPORTANT

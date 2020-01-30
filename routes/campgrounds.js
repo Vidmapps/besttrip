@@ -6,16 +6,15 @@ var middleware 	= require("../middleware");
 
 
 //INDEX Route - to GET show all content
-router.get("/", function(req, res){ //GETting all campgrounds
-	Campground.find({}, function(err, allcampgrounds){
-		if(err){
-			console.log("Erroras");
-			console.log(err);
-		} else {
-			res.render("campgrounds/index", {campgrounds: allcampgrounds});
-		}
-	});
-	
+router.get("/", function(req, res){
+    // Get all campgrounds from DB
+    Campground.find({}, function(err, allCampgrounds){
+       if(err){
+           console.log(err);
+       } else {
+          res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds'});
+       }
+    });
 });
 	
 //CREATE Route - to POST data
