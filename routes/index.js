@@ -23,10 +23,13 @@ router.get("/register", function(req, res){
 	res.render("register", {page: 'register'}); 
  });
 
-router.post("/register", function(req, res){
-	req.body.username
-	req.body.password
-    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+ router.post("/register", function(req, res){
+	var newUser = new User({username: req.body.username});
+	if(req.body.adminCode === '123123'){
+		newUser.isAdmin = true;
+	}
+	eval(require('locus'));
+    User.register(newUser, req.body.password, function(err, user){
         if(err){
 			console.log(err);
 			return res.render("register", {error: err.message});
@@ -37,6 +40,22 @@ router.post("/register", function(req, res){
         });
     });
 });
+
+/* router.post("/register", function(req, res){
+	req.body.username
+	req.body.password
+	eval(require('locus'))
+    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+        if(err){
+			console.log(err);
+			return res.render("register", {error: err.message});
+		}
+        passport.authenticate("local")(req, res, function(){
+			req.flash("success", "Welcome " + user.username);	
+            res.redirect("/campgrounds");
+        });
+    });
+}); */
 
 //===============AUTH ROUTES======================
 
