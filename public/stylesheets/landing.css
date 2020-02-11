@@ -40,22 +40,22 @@ body {
 }
 
 .slideshow li:nth-child(1) { 
-  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+  background-image: url(https://i2.wp.com/outoftownblog.com/wp-content/uploads/2018/07/French-Polynesia.jpg?fit=1280%2C849&ssl=1) 
 }
 .slideshow li:nth-child(2) { 
-  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  background-image: url(https://cdn.lifehack.org/wp-content/uploads/2014/08/BayOfKotorMontenegro.jpg);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  background-image: url(https://i.pinimg.com/originals/e1/dd/36/e1dd361e787b6080783c78cdb8c25650.jpg);
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  background-image: url(https://apis.xogrp.com/media-api/images/e5005818-fa4c-4c0b-b1c2-e5e8c93150fb);
   animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  background-image: url(https://10mosttoday.com/wp-content/uploads/2016/04/kw.jpg);
   animation-delay: 40s; 
 }
 
