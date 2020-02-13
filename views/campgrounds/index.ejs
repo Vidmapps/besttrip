@@ -3,7 +3,11 @@
 <div class="container">
 	<header class="jumbotron">
 		<div class = container>
-			<h1> Welcome to the BestTrip!</h1>
+			<h1> Welcome to the BestTrip
+					<% if(currentUser){ %>
+						<%= currentUser.username %>
+					<% } %>
+				!</h1>
 			<p>Check out our trips!</p>
 			<p><a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new Trip</a></p>
 			<ul>
