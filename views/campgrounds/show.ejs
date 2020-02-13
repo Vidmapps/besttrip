@@ -16,7 +16,7 @@
 			<div class="card">
 					<img src="<%= campground.image %>" class="card-img-top" alt="<%= campground.name %>">
 					<div class="card-body mb-3">
-						<p class="float-right">$<%= campground.cost %>/week</p>
+						<p class="float-right">$<%= campground.price %>/week</p>
 						<h5 class="card-title"><%= campground.name %></h5>
 						<div class="card-title"><em>Submitted by: <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %></em></div>
 						<hr>
