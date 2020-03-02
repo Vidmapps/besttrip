@@ -74,6 +74,15 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 //===============PASSPORT CONFIG======================
 
 
+//==========Travis CI============///
+module.exports = {
+	add: function (a, b) {
+			return a + b;
+	}
+};
+//==========Travis CI============///
+
+
 //IMPORTANT
 app.listen(
 	//3000
