@@ -29,9 +29,9 @@ app.locals.moment 					= require('moment');
 //===============DATABASE CONFIG======================
 //mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connect("mongodb+srv://vidmantas:desrainis@cluster0-teyia.mongodb.net/test?retryWrites=true&w=majority", {
-	useNewUrlParser: true, 
-	useUnifiedTopology: true,
-	useCreateIndex: true
+	//useNewUrlParser: true, 
+	//useUnifiedTopology: true,
+	//useCreateIndex: true
 }).then (() => {
 	console.log("Connectect to DB!");
 }).catch(err => {
