@@ -2,8 +2,7 @@
 [![Build Status](https://travis-ci.com/Vidmapps/besttrip.svg?branch=master)](https://travis-ci.com/Vidmapps/besttrip)
 
 
-This is the project created during my **Web Development** learning phase via **Udemy Front-end development course**. 
-
+This is the project created during my **Web Development** learning phase via **Udemy Front-end development [course](https://www.udemy.com/course/the-web-developer-bootcamp/)**. 
 
 
 This is my first fullstack project https://besttrip.herokuapp.com/
