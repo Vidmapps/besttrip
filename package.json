@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha",
-    "start": "node app.js"
+    "start": "node app.js",
+    "eslint": "npx eslint ."
   },
   "author": "Vidma",
   "license": "ISC",
