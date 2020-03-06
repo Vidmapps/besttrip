@@ -1,30 +1,21 @@
 //IMPORTANT
-require('dotenv').config();
+require('dotenv'
+).config();
 
-var express 								= require("express");
-var app											= express();
-var bodyParser 							= require("body-parser");
-var mongoose 								= require("mongoose");
-var flash										= require("connect-flash")
-var seedDB 									= require("./seeds");
-var passport 								= require("passport");
-var User 										= require("./models/user");
-var LocalStrategy 					= require("passport-local");
-var passportLocalMongoose 	= require("passport-local-mongoose");
-var methodOverride 					= require("method-override");
-var Campground 							= require("./models/campground");
-var Comment 								= require("./models/comment");
-var commentRoutes 					= require("./routes/comments");
-var campgroundRoutes 				= require("./routes/campgrounds");
-var indexRoutes 						= require("./routes/index");
-var expressSanitizer 				= require("express-sanitizer");
-app.locals.moment 					= require('moment');
-
-
-
-//var User = require("./models/user");
-//var request = require("request");
-//seedDB();
+const express 					= require("express"),
+app											= express(),
+bodyParser 							= require("body-parser"),
+mongoose 								= require("mongoose"),
+flash										= require("connect-flash"),
+passport 								= require("passport"),
+User 										= require("./models/user"),
+LocalStrategy 					= require("passport-local"),
+methodOverride 					= require("method-override"),
+commentRoutes 					= require("./routes/comments"),
+campgroundRoutes 				= require("./routes/campgrounds"),
+indexRoutes 						= require("./routes/index"),
+expressSanitizer 				= require("express-sanitizer");
+app.locals.moment 			= require('moment');
 
 //===============DATABASE CONFIG======================
 //mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true, useUnifiedTopology: true});
@@ -93,11 +84,3 @@ app.listen(
 //IMPORTANT
 
 
-
-//DB rules
-/*
-	1. show dbs
-	2. use //db name//
-	3. show collections
-	4. db.//collection name//.find()//
-*/
