@@ -19,3 +19,8 @@
     height: 400px;
     width: 100%;
 }
+
+.sign-up-container {
+	width: 30%; 
+	margin: 25px auto;
+}
