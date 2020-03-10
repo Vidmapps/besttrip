@@ -1,44 +1,44 @@
-var express 	= require("express");
-var router 		= express.Router();
-var passport 	= require("passport");
-var User 		= require("../models/user");
+const express 	= require('express');
+
+const router 		= express.Router();
+const passport 	= require('passport');
+const User 		= require('../models/user');
 
 
-
-//Default Route
-router.get("/", function(req, res){ //Search Input page
-	res.render("landing");
+// Default Route
+router.get('/', (req, res) => { // Search Input page
+  res.render('landing');
 });
 
 
-//===============AUTH ROUTES======================
+//= ==============AUTH ROUTES======================
 
-//show sign up form
+// show sign up form
 /* router.get("/register", function(req, res){
-   res.render("register"); 
+   res.render("register");
 }); */
 
 // show register form
-router.get("/register", function(req, res){
-	res.render("register", {page: 'register'}); 
- });
+router.get('/register', (req, res) => {
+  res.render('register', { page: 'register' });
+});
 
- router.post("/register", function(req, res){
-	var newUser = new User({username: req.body.username});
-	if(req.body.adminCode === '123123'){
-		newUser.isAdmin = true;
-	}
-	eval(require('locus'));
-    User.register(newUser, req.body.password, function(err, user){
-        if(err){
-			console.log(err);
-			return res.render("register", {error: err.message});
-		}
-        passport.authenticate("local")(req, res, function(){
-			req.flash("success", "Welcome " + user.username);	
-            res.redirect("/campgrounds");
-        });
+router.post('/register', (req, res) => {
+  const newUser = new User({ username: req.body.username });
+  if (req.body.adminCode === '123123') {
+    newUser.isAdmin = true;
+  }
+  eval(require('locus'));
+  User.register(newUser, req.body.password, (err, user) => {
+    if (err) {
+      console.log(err);
+      return res.render('register', { error: err.message });
+    }
+    passport.authenticate('local')(req, res, () => {
+      req.flash('success', `Welcome ${user.username}`);
+      res.redirect('/campgrounds');
     });
+  });
 });
 
 /* router.post("/register", function(req, res){
@@ -51,49 +51,43 @@ router.get("/register", function(req, res){
 			return res.render("register", {error: err.message});
 		}
         passport.authenticate("local")(req, res, function(){
-			req.flash("success", "Welcome " + user.username);	
+			req.flash("success", "Welcome " + user.username);
             res.redirect("/campgrounds");
         });
     });
 }); */
 
-//===============AUTH ROUTES======================
+//= ==============AUTH ROUTES======================
 
-//====== Login Routes ========
-/* 
+//= ===== Login Routes ========
+/*
 router.get("/login", function(req, res){
-   res.render("login"); 
+   res.render("login");
 }); */
 
-//show login form
-router.get("/login", function(req, res){
-	res.render("login", {page: 'login'}); 
- });
-
-router.post("/login", passport.authenticate("local", {
-	successRedirect : "/campgrounds",
-	failureRedirect : "/login"
-}), function(req, res){
-	
+// show login form
+router.get('/login', (req, res) => {
+  res.render('login', { page: 'login' });
 });
 
-//====== Login Routes ========
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/campgrounds',
+  failureRedirect: '/login',
+}), () => {
 
-//====== Logout Route ========
+});
 
-router.get("/logout", function(req, res){
+//= ===== Login Routes ========
+
+//= ===== Logout Route ========
+
+router.get('/logout', (req, res) => {
    	req.logout();
-	req.flash("success", "Logged you out");
-	res.redirect("/");
+  req.flash('success', 'Logged you out');
+  res.redirect('/');
 });
 
-function isLoggedIn(req, res, next){
-	if(req.isAuthenticated()){
-		return next();
-	}
-	res.redirect("/login");
-}
 
-//====== Logout Route ========
+//= ===== Logout Route ========
 
-	module.exports = router;
+module.exports = router;
