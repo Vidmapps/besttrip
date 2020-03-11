@@ -73,7 +73,6 @@ router.get('/:id', (req, res) => {
   // find based on ID
   Campground.findById(req.params.id).populate('comments').exec((err, foundCampground) => {
     if (err) {
-      console.log('Please check and try again');
       console.log(err);
     } else {
       // Show based on ID
