@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 // IMPORTANT
 require('dotenv').config();
 
@@ -19,11 +18,11 @@ const indexRoutes 		= require('./routes/index');
 app.locals.moment 		= require('moment');
 
 //= ==============DATABASE CONFIG======================
+// function to run DB locally.
 // mongoose.connect("mongodb://localhost:27017/yelp_camp", {useNewUrlParser: true, useUnifiedTopology: true});
+
 mongoose.connect('mongodb+srv://vidmantas:desrainis@cluster0-teyia.mongodb.net/test?retryWrites=true&w=majority', {
-  // useNewUrlParser: true,
-  // useUnifiedTopology: true,
-  // useCreateIndex: true
+  useUnifiedTopology: true,
 }).then(() => {
   console.log('Connectect to DB!');
 }).catch((err) => {
@@ -75,13 +74,11 @@ module.exports = {
 };
 //= =========Travis CI============///
 
-
-// IMPORTANT
+//IMPORTANT
 app.listen(
-  // 3000
-  process.env.PORT, process.env.IP,
-	 () => {
-    console.log('Server listening on port 3000');
-  },
-);
-// IMPORTANT
+	//3000
+	process.env.PORT, process.env.IP
+	, function() {
+  console.log('Server listening on port 3000'); 
+});
+//IMPORTANT

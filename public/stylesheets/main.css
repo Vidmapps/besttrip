@@ -20,7 +20,12 @@
     width: 100%;
 }
 
-.sign-up-container {
+.form-container {
 	width: 30%; 
 	margin: 25px auto;
+}
+
+.camps {
+	display:flex; 
+	flex-wrap:wrap;
 }
