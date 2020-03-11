@@ -24,7 +24,7 @@ app.locals.moment 		= require('moment');
 mongoose.connect('mongodb+srv://vidmantas:desrainis@cluster0-teyia.mongodb.net/test?retryWrites=true&w=majority', {
   useUnifiedTopology: true,
 }).then(() => {
-  console.log('Connectect to DB!');
+  console.log('Connected to DB!');
 }).catch((err) => {
   console.log('ERROR:', err.message);
 });
