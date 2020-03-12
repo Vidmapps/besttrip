@@ -15,6 +15,7 @@ const User 				= require('./models/user');
 const commentRoutes 	= require('./routes/comments');
 const campgroundRoutes 	= require('./routes/campgrounds');
 const indexRoutes 		= require('./routes/index');
+const authRoutes 		= require('./routes/auth');
 app.locals.moment 		= require('moment');
 
 //= ==============DATABASE CONFIG======================
@@ -63,6 +64,7 @@ app.use((req, res, next) => {
 app.use('/', indexRoutes);
 app.use('/campgrounds', campgroundRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);
+app.use('/auth', authRoutes);
 //= ==============PASSPORT CONFIG======================
 
 

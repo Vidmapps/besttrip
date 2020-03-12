@@ -1,7 +1,7 @@
 <% include ../partials/header.ejs %>
 
 <div class="container">
-	<header class="jumbotron">
+	<div class="jumbotron">
 		<div class = container>
 			<h1> Welcome to the BestTrip
 					<% if(currentUser){ %>
@@ -21,7 +21,7 @@
 				<li>Bootstrap 4</li>
 			</ul>
 		</div>
-	</header>		
+	</div>		
 	<div class="row text-center camps">
 			<% campgrounds.forEach(function(campground){ %>
 			<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
