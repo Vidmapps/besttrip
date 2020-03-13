@@ -1,8 +1,8 @@
 const express 	= require('express');
 
-const router 		= express.Router({ mergeParams: true });
+const router 		  = express.Router({ mergeParams: true });
 const Campground 	= require('../models/campground');
-const Comment 	= require('../models/comment');
+const Comment 	  = require('../models/comment');
 const middleware 	= require('../middleware');
 
 
@@ -84,35 +84,4 @@ router.delete('/:comment_id/', middleware.checkCommentOwnership, (req, res) => {
   });
 });
 
-
-/* //midleware
-function isLoggedIn(req, res, next){
-	if(req.isAuthenticated()){
-		return next();
-	}
-	res.redirect("/login");
-}
-
-function checkCommentOwnership(req, res, next){
-	if(req.isAuthenticated()){
-		Comment.findById(req.params.comment_.id, function(err, foundComment){
-			if(err){
-				res.redirect("back");
-			} else {
-				//does user own the comment?
-				if(foundComment.author.id.equals(req.user._id)){
-					//Show based on ID
-					next();
-				} else {
-					//otherwise redirect
-					res.redirect("back");
-			}
-		};
-	});
-	req.params.id
-	} else {
-		res.redirect("back");
-	}
-};
-*/
 module.exports = router;
