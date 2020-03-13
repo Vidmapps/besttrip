@@ -74,11 +74,11 @@ module.exports = {
 };
 //= =========Travis CI============///
 
-//IMPORTANT
+// IMPORTANT
 app.listen(
-	//3000
-	process.env.PORT, process.env.IP
-	, function() {
-  console.log('Server listening on port 3000'); 
-});
-//IMPORTANT
+  	//3000,
+  	process.env.PORT, process.env.IP
+	 () => {
+    console.log('Server listening on port 3000');
+  },
+);
