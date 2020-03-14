@@ -24,7 +24,7 @@
                   <li class="nav-item <%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/auth/register" class="nav-link">Sign Up</a></li>
               <% } else { %>
                   <li><a href="#" class="nav-link">Signed In As <%= currentUser.username %></a></li>
-                  <li><a href="/logout" class="nav-link">Logout</a></li>
+                  <li><a href="/auth/logout" class="nav-link">Logout</a></li>
               <% } %>
           </ul>
       </div>
