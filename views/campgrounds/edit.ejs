@@ -7,15 +7,19 @@
 		<div class="form-container">
 			<form class="ui form" action="/campgrounds/<%= campground._id%>?_method=PUT" method="POST">
 				<div class="form-group">
+					<label for="location">Name</label>
 					<input class="form-control" type="text" name="campground[name]" value="<%= campground.name %>">
 				</div>
 				<div class="form-group">
+					<label for="location">Price</label>
 					<input class="form-control" type="number" name="campground[price]" value="<%= campground.price %>" min="0.01" step="0.01">
 				</div>
 				<div class="form-group">
+					<label for="location">Image</label>
 					<input class="form-control" type="text" name="campground[image]" value="<%= campground.image %>">
 				</div>
 				<div class="form-group">
+					<label for="location">Description</label>
 					<input class="form-control" type="textarea" name="campground[description]" value="<%- campground.description %>">
 				</div>
 				<div class="form-group">
