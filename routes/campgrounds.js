@@ -84,7 +84,7 @@ router.get('/:id', (req, res) => {
 
 // EDIT Route - GET the data to update
 router.get('/:id/edit', middleware.checkCampgroundOwnership, (req, res) => {
-  Campground.findById(req.params.id, (foundCampground) => {
+    Campground.findById(req.params.id, (err, foundCampground) => {
     // Show based on ID
     res.render('campgrounds/edit', { campground: foundCampground });
   });
