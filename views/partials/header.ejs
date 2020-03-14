@@ -6,7 +6,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/main.css">
-
 	</head>
 	<body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
@@ -16,15 +15,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a href="/campgrounds" class="nav-link">Home</a></li>
+            <li class="isActive('campgrounds')"><a href="/campgrounds" class="nav-link">Home</a></li>
           </ul>
           <ul class="navbar-nav navbar-right">
               <% if(!currentUser){ %>
-                  <li class="nav-item <%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>"><a href="/login" class="nav-link">Login</a></li>
-                  <li class="nav-item <%= typeof page !== 'undefined' && page === 'register' ? 'active' : '' %>"><a href="/register" class="nav-link">Sign Up</a></li>
+                  <li class="isActive(’login’)"><a href="/auth/login" class="nav-link">Login</a></li>
+                  <li class="isActive(‘register’)"><a href="/auth/register" class="nav-link">Sign Up</a></li>
               <% } else { %>
                   <li><a href="#" class="nav-link">Signed In As <%= currentUser.username %></a></li>
-                  <li><a href="/logout" class="nav-link">Logout</a></li>
+                  <li><a href="/auth/logout" class="nav-link">Logout</a></li>
               <% } %>
           </ul>
       </div>
